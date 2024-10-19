@@ -34,4 +34,15 @@ class Section:
         self.name = name
         self.teacher = teacher
         self.students = []
-        self.class_info = None  
+        self.class_info = None
+
+    def assignTeacher(self, teacher):
+        self.teacher = teacher
+
+    def addStudent(self, student):
+        self.students.append(student)
+
+    def setClassInfo(self, class_info):
+        self.class_info = class_info
+
+    
