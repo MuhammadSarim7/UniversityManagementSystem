@@ -16,3 +16,16 @@ class Teacher(Human):
         self.teacher_id = teacher_id
 
 
+class Class:
+    def __init__(self, name, start_time, end_time, room_number):
+        self.name = name
+        self.start_time = start_time
+        self.end_time = end_time
+        self.room_number = room_number
+
+    def __str__(self):
+        return (f"Class: {self.name}\n"
+                f"Class Time: {self.start_time} - {self.end_time}\n"
+                f"Room Number: {self.room_number}")
+
+
