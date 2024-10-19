@@ -66,4 +66,13 @@ class University:
         self.teachers = []
         self.sections = []
 
-   
+    def addStudent(self, student):
+        self.students.append(student)
+
+    def addTeacher(self, teacher):
+        self.teachers.append(teacher)
+
+    def addSection(self, section):
+        self.sections.append(section)
+
+    
