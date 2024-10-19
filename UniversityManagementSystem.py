@@ -96,4 +96,12 @@ class University:
                 f"╚══════════════════════════════════════╝")
 
 
+def getInteger(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+
 
