@@ -66,42 +66,4 @@ class University:
         self.teachers = []
         self.sections = []
 
-    def addStudent(self, student):
-        self.students.append(student)
-
-    def addTeacher(self, teacher):
-        self.teachers.append(teacher)
-
-    def addSection(self, section):
-        self.sections.append(section)
-
-    def findStudentById(self, student_id):
-        for student in self.students:
-            if student.student_id == student_id:
-                return student
-        return None
-
-    def findTeacherById(self, teacher_id):
-        for teacher in self.teachers:
-            if teacher.teacher_id == teacher_id:
-                return teacher
-        return None
-
-    def __str__(self):
-        return (f"╔══════════════════════════════════════╗\n"
-                f"║ University: {self.name}\n"
-                f"║ Total Students: {len(self.students)}\n"
-                f"║ Total Teachers: {len(self.teachers)}\n"
-                f"║ Total Sections: {len(self.sections)}\n"
-                f"╚══════════════════════════════════════╝")
-
-
-def getInteger(prompt):
-    while True:
-        try:
-            value = int(input(prompt))
-            return value
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
-
-
+   
