@@ -96,3 +96,21 @@ class University:
                 f"╚══════════════════════════════════════╝")
 
 
+def getInteger(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+
+
+def getValidString(prompt):
+    while True:
+        value = input(prompt)
+        if all(char.isalpha() or char.isspace() for char in value) and value.strip():
+            return value
+        else:
+            print("Invalid input. Please enter a valid name (letters and spaces only).")
+
+
