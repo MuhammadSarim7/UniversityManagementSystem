@@ -75,4 +75,16 @@ class University:
     def addSection(self, section):
         self.sections.append(section)
 
+    def findStudentById(self, student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                return student
+        return None
+
+    def findTeacherById(self, teacher_id):
+        for teacher in self.teachers:
+            if teacher.teacher_id == teacher_id:
+                return teacher
+        return None
+
     
