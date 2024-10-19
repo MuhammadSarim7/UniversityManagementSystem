@@ -29,3 +29,9 @@ class Class:
                 f"Room Number: {self.room_number}")
 
 
+class Section:
+    def __init__(self, name, teacher=None):
+        self.name = name
+        self.teacher = teacher
+        self.students = []
+        self.class_info = None  
