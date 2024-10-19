@@ -10,3 +10,9 @@ class Student(Human):
         self.student_id = student_id
 
 
+class Teacher(Human):
+    def __init__(self, name, age, teacher_id):
+        super().__init__(name, age)
+        self.teacher_id = teacher_id
+
+
