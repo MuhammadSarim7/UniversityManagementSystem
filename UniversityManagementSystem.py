@@ -114,3 +114,58 @@ def getValidString(prompt):
             print("Invalid input. Please enter a valid name (letters and spaces only).")
 
 
+def main():
+    university_name = getValidString("Enter the name of the university: ")
+    uni = University(university_name)
+    num_teachers = getInteger("Enter the number of teachers: ")
+    for _ in range(num_teachers):
+        print(f"\nEntering details for Teacher:")
+        name = getValidString("Enter teacher name: ")
+        age = getInteger("Enter teacher age: ")
+        teacher_id = input("Enter teacher ID: ")
+        teacher = Teacher(name, age, teacher_id)
+        uni.addTeacher(teacher)
+    num_students = getInteger("\nEnter the number of students: ")
+    for _ in range(num_students):
+        print(f"\nEntering details for Student:")
+        name = getValidString("Enter student name: ")
+        age = getInteger("Enter student age: ")
+        student_id = input("Enter student ID: ")
+        student = Student(name, age, student_id)
+        uni.addStudent(student)
+    num_sections = getInteger("\nEnter the number of sections: ")
+    for _ in range(num_sections):
+        print(f"\nEntering details for Section:")
+        section_name = input("Enter section name: ")
+        section = Section(section_name)
+        teacher_id = input("Enter the teacher ID for this section: ")
+        teacher = uni.findTeacherById(teacher_id)
+        if teacher:
+            section.assignTeacher(teacher)
+        else:
+            print(f"No teacher found with ID {teacher_id}")
+        class_name = input("Enter course name and code: ")
+        start_time = input("Enter class start time: ")
+        end_time = input("Enter class end time: ")
+        room_number = input("Enter room number: ")
+        class_info = Class(class_name, start_time, end_time, room_number)
+        section.setClassInfo(class_info)
+        num_section_students = getInteger(
+            "Enter the number of students in this section: ")
+        for _ in range(num_section_students):
+            print(f"Adding Student to Section:")
+            student_id = input("Enter student ID: ")
+            student = uni.findStudentById(student_id)
+            if student:
+                section.addStudent(student)
+            else:
+                print(f"No student found with ID {student_id}")
+        uni.addSection(section)
+    print("\nUniversity Summary:")
+    print(uni)
+    for section in uni.sections:
+        print(section)
+
+
+if __name__ == "__main__":
+    main()
