@@ -87,4 +87,12 @@ class University:
                 return teacher
         return None
 
-    
+    def __str__(self):
+        return (f"╔══════════════════════════════════════╗\n"
+                f"║ University: {self.name}\n"
+                f"║ Total Students: {len(self.students)}\n"
+                f"║ Total Teachers: {len(self.teachers)}\n"
+                f"║ Total Sections: {len(self.sections)}\n"
+                f"╚══════════════════════════════════════╝")
+
+
