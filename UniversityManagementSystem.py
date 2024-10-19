@@ -45,4 +45,55 @@ class Section:
     def setClassInfo(self, class_info):
         self.class_info = class_info
 
-    
+    def __str__(self):
+        student_names = [student.name for student in self.students]
+        teacher_name = self.teacher.name if self.teacher else 'None'
+        class_details = str(
+            self.class_info) if self.class_info else "No class information"
+        return (f"┌─────────────────────────────────────────┐\n"
+                f"│ Section: {self.name}\n"
+                f"│ Teacher: {teacher_name}\n"
+                f"│ Students: {', '.join(student_names)
+                               if student_names else 'None'}\n"
+                f"│ Class Info:\n{class_details}\n"
+                f"└─────────────────────────────────────────┘")
+
+
+class University:
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+        self.teachers = []
+        self.sections = []
+
+    def addStudent(self, student):
+        self.students.append(student)
+
+    def addTeacher(self, teacher):
+        self.teachers.append(teacher)
+
+    def addSection(self, section):
+        self.sections.append(section)
+
+    def findStudentById(self, student_id):
+        for student in self.students:
+            if student.student_id == student_id:
+                return student
+        return None
+
+    def findTeacherById(self, teacher_id):
+        for teacher in self.teachers:
+            if teacher.teacher_id == teacher_id:
+                return teacher
+        return None
+
+    def __str__(self):
+        return (f"╔══════════════════════════════════════╗\n"
+                f"║ University: {self.name}\n"
+                f"║ Total Students: {len(self.students)}\n"
+                f"║ Total Teachers: {len(self.teachers)}\n"
+                f"║ Total Sections: {len(self.sections)}\n"
+                f"╚══════════════════════════════════════╝")
+
+
+
